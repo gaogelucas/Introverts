@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15C47a" minimumToolsVersion="Automatic">
+    <entity name="CDAnswer" representedClassName=".CDAnswer" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metaTime" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDQuestion" inverseName="answers" inverseEntity="CDQuestion" syncable="YES"/>
+    </entity>
+    <entity name="CDQuestion" representedClassName=".CDQuestion" syncable="YES">
+        <attribute name="canceledAnswer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metaTime" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDAnswer" inverseName="question" inverseEntity="CDAnswer" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDAnswer" positionX="-54" positionY="0" width="128" height="105"/>
+        <element name="CDQuestion" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
+</model>
